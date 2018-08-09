@@ -9,7 +9,7 @@
 import SpriteKit
 
 class Player: SKSpriteNode {
-    var playerSpeed = 0.01
+    var playerSpeed = 0.001
     func move(to: CGPoint?) {
         if let to = to {
             let moveAction = SKAction.move(to: to, duration: playerSpeed)
