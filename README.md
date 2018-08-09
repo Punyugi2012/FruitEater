@@ -1,3 +1,3 @@
 # FruitEater
 
-Learning Spritkit
+Learning Spritekit
