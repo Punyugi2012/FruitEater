@@ -23,6 +23,7 @@ class GamePlay: SKScene, SKPhysicsContactDelegate {
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
         initGame()
+        self.size = view.frame.size
     }
     
     private func initGame() {
@@ -88,8 +89,9 @@ class GamePlay: SKScene, SKPhysicsContactDelegate {
             contact.bodyB.node?.removeFromParent()
         }
         else if contact.bodyA.node?.name == "Player" && contact.bodyB.node?.name == "Boom" {
-            contact.bodyA.node?.removeFromParent()
-            contact.bodyB.node?.removeFromParent()
+            if let finishPlayScene = FinishPlay(fileNamed: "FinishPlay") {
+                view!.presentScene(finishPlayScene)
+            }
         }
     }
     

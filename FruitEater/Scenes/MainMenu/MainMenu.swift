@@ -19,4 +19,7 @@ class MainMenu: SKScene {
             }
         }
     }
+    override func didMove(to view: SKView) {
+        self.size = view.frame.size
+    }
 }
