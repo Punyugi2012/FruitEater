@@ -9,6 +9,6 @@
 import Foundation
 
 class ColliderType {
-    static let playder: UInt32 = 0
+    static let player: UInt32 = 0
     static let fruit_and_boom: UInt32 = 1
 }

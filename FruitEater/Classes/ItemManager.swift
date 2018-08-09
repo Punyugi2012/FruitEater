@@ -17,10 +17,13 @@ class ItemManager {
         let randomNumber = Int(randomBetweenNumbers(first: 1, second: 10))
         if randomNumber >= 5 {
             item = SKSpriteNode(imageNamed: "boom")
+            item.name = "Boom"
         }
         else {
             item = SKSpriteNode(imageNamed: "banana")
+            item.name = "Banana"
         }
+        item.zPosition = 1
         item.size = CGSize(width: 40, height: 40)
         item.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         item.physicsBody = SKPhysicsBody(circleOfRadius: item.size.height / 2)
