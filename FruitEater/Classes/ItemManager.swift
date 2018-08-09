@@ -25,7 +25,7 @@ class ItemManager {
         item.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         item.physicsBody = SKPhysicsBody(circleOfRadius: item.size.height / 2)
         item.physicsBody?.categoryBitMask = ColliderType.fruit_and_boom
-        item.position = CGPoint(x: randomBetweenNumbers(first: minX + 1, second: maxX), y: UIScreen.main.bounds.height + 50)
+        item.position = CGPoint(x: randomBetweenNumbers(first: minX + item.size.width, second: maxX - item.size.width), y: UIScreen.main.bounds.height + 50)
         return item
     }
 }
