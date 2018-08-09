@@ -19,6 +19,7 @@ class GamePlay: SKScene, SKPhysicsContactDelegate {
     var itemOutOfBoundDetecter: Timer?
     var scoreLabel: SKLabelNode?
     var score = 0
+    var highScore: SKLabelNode?
     
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
@@ -41,6 +42,11 @@ class GamePlay: SKScene, SKPhysicsContactDelegate {
         scoreLabel = childNode(withName: "ScoreLabel") as? SKLabelNode
         scoreLabel?.text = "\(score)"
         scoreLabel?.position = CGPoint(x: self.frame.minX + 50, y: self.frame.maxY - 50)
+        let highScoreLabel = childNode(withName: "HighScoreLabel") as? SKLabelNode
+        highScoreLabel?.position = CGPoint(x: self.frame.maxX - 100, y: self.frame.maxY - 50)
+        highScore = childNode(withName: "HighScore") as? SKLabelNode
+        highScore?.text = "\(UserDefaults.standard.integer(forKey: highScoreKey))"
+        highScore?.position = CGPoint(x: self.frame.maxX - 100, y: self.frame.maxY - 100)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -86,6 +92,11 @@ class GamePlay: SKScene, SKPhysicsContactDelegate {
         if contact.bodyA.node?.name == "Player" && contact.bodyB.node?.name == "Banana" {
             score += 1
             scoreLabel?.text = "\(score)"
+            if score > UserDefaults.standard.integer(forKey: highScoreKey) {
+                UserDefaults.standard.set(score, forKey: highScoreKey)
+                highScore?.text = "\(score)"
+               
+            }
             contact.bodyB.node?.removeFromParent()
         }
         else if contact.bodyA.node?.name == "Player" && contact.bodyB.node?.name == "Boom" {

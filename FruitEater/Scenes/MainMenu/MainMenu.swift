@@ -9,6 +9,8 @@
 import UIKit
 import SpriteKit
 
+let highScoreKey = "HighScoreKey"
+
 class MainMenu: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
@@ -21,5 +23,8 @@ class MainMenu: SKScene {
     }
     override func didMove(to view: SKView) {
         self.size = view.frame.size
+        if let highScore = childNode(withName: "HighScore") as? SKLabelNode {
+            highScore.text = "\(UserDefaults.standard.integer(forKey: highScoreKey))"
+        }
     }
 }
