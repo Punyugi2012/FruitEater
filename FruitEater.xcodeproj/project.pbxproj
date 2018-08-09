@@ -16,6 +16,7 @@
 		B8524294211C3A1E00D21F84 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8524293211C3A1E00D21F84 /* MainMenu.swift */; };
 		B8524297211C3A5600D21F84 /* GamePlay.sks in Resources */ = {isa = PBXBuildFile; fileRef = B8524296211C3A5600D21F84 /* GamePlay.sks */; };
 		B8524299211C3A6300D21F84 /* GamePlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8524298211C3A6300D21F84 /* GamePlay.swift */; };
+		B852429C211C456800D21F84 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B852429B211C456800D21F84 /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		B8524293211C3A1E00D21F84 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		B8524296211C3A5600D21F84 /* GamePlay.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GamePlay.sks; sourceTree = "<group>"; };
 		B8524298211C3A6300D21F84 /* GamePlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlay.swift; sourceTree = "<group>"; };
+		B852429B211C456800D21F84 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		B8524276211C2BE600D21F84 /* FruitEater */ = {
 			isa = PBXGroup;
 			children = (
+				B852429A211C455800D21F84 /* Classes */,
 				B852428F211C39D100D21F84 /* Scenes */,
 				B8524277211C2BE600D21F84 /* AppDelegate.swift */,
 				B852427F211C2BE600D21F84 /* GameViewController.swift */,
@@ -98,6 +101,14 @@
 				B8524298211C3A6300D21F84 /* GamePlay.swift */,
 			);
 			path = GamePlay;
+			sourceTree = "<group>";
+		};
+		B852429A211C455800D21F84 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B852429B211C456800D21F84 /* Player.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +187,7 @@
 				B8524280211C2BE600D21F84 /* GameViewController.swift in Sources */,
 				B8524299211C3A6300D21F84 /* GamePlay.swift in Sources */,
 				B8524294211C3A1E00D21F84 /* MainMenu.swift in Sources */,
+				B852429C211C456800D21F84 /* Player.swift in Sources */,
 				B8524278211C2BE600D21F84 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
