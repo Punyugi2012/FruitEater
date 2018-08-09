@@ -90,6 +90,7 @@ class GamePlay: SKScene, SKPhysicsContactDelegate {
         }
         else if contact.bodyA.node?.name == "Player" && contact.bodyB.node?.name == "Boom" {
             if let finishPlayScene = FinishPlay(fileNamed: "FinishPlay") {
+                finishPlayScene.getScore = score
                 view!.presentScene(finishPlayScene)
             }
         }
