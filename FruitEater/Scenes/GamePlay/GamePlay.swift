@@ -47,6 +47,10 @@ class GamePlay: SKScene, SKPhysicsContactDelegate {
         highScore = childNode(withName: "HighScore") as? SKLabelNode
         highScore?.text = "\(UserDefaults.standard.integer(forKey: highScoreKey))"
         highScore?.position = CGPoint(x: self.frame.maxX - 100, y: self.frame.maxY - 100)
+        
+        if let backgroundNode = childNode(withName: "Background") as? SKSpriteNode {
+            backgroundNode.size = view!.bounds.size
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

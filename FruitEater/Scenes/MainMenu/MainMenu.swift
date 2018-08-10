@@ -23,6 +23,9 @@ class MainMenu: SKScene {
     }
     override func didMove(to view: SKView) {
         self.size = view.frame.size
+        if let backgroundNode = childNode(withName: "Background") as? SKSpriteNode {
+            backgroundNode.size = view.frame.size
+        }
         if let highScore = childNode(withName: "HighScore") as? SKLabelNode {
             highScore.text = "\(UserDefaults.standard.integer(forKey: highScoreKey))"
         }

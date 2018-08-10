@@ -21,6 +21,9 @@ class FinishPlay: SKScene {
         if let highScore = childNode(withName: "HighScore") as? SKLabelNode {
             highScore.text = "\(UserDefaults.standard.integer(forKey: highScoreKey))"
         }
+        if let backgroundNode = childNode(withName: "Background") as? SKSpriteNode {
+            backgroundNode.size = view.frame.size
+        }
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
